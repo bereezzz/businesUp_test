@@ -1,0 +1,700 @@
+/* Подключение стилей шрифта */
+@font-face {
+  font-family: "TT Norms Pro";
+  src: url("../fonts/tt-norms-pro.woff2") format("woff2"),
+    /* Формат для современных браузеров */ url("../fonts/tt-norms-pro.woff")
+      format("woff"); /* Формат для старых браузеров */
+  /* Другие форматы шрифта могут быть добавлены здесь */
+
+  font-style: normal;
+}
+html,
+body {
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+}
+.bottom_menu {
+  display: none;
+}
+.header_locate_mobile {
+  display: none;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border-bottom: 1px solid var(--system-neutral-100, #e4e4e7);
+  background: var(--system-white, #fff);
+}
+/* первая полоса шапки */
+.header_1_row {
+  height: 80px;
+  border-bottom: 1px solid var(--system-neutral-100, #e4e4e7);
+  display: flex;
+}
+.header_1_row_block_logo {
+  display: flex;
+  width: 384px;
+  height: 80px;
+  padding: 0px 24px 0px 50px;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+}
+.header_1_row_block_logo_text {
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 13px;
+  line-height: 130%; /* 16.9px */
+  color: var(--text-secondary-text, #5e6062);
+  font-weight: 400;
+}
+.header_1_row_block_logo_logo {
+  width: 151px;
+}
+.header_custom_input_search {
+  position: relative;
+  height: 100%;
+  border-left: 1px solid var(--system-neutral-100, #e4e4e7);
+  max-width: 896px;
+  width: 100%;
+  min-width: 390px;
+}
+
+.input-field {
+  width: 100%;
+  height: 100%;
+  padding: 10px 10px 10px 40px; /* Левый пэддинг для места под иконку */
+  border: none;
+  font-size: 16px;
+}
+
+.label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px; /* Учитываем размер иконки */
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.header_locate {
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 896px;
+  width: 100%;
+  min-width: 390px;
+  border-left: 1px solid var(--system-neutral-100, #e4e4e7);
+}
+.header_locate_text {
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 15px;
+  line-height: 130%; /* 16.9px */
+  color: var(--text-primary-text, #222427);
+}
+.header_messengers_block {
+  display: flex;
+  border-left: 1px solid var(--system-neutral-100, #e4e4e7);
+  width: 384px;
+  height: 80px;
+  /* padding: 0px 50px; */
+
+  justify-content: space-around;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+.header_2_row_menu .menuItem:last-child {
+  display: none;
+}
+.header_messengers_block_icons_phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header_messengers_block_icons {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+.header_messengers_block_phone {
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  color: var(--text-primary-text, #222427);
+  cursor: pointer;
+}
+.header_messengers_block_icons svg {
+  cursor: pointer;
+}
+.header_messengers_block_text {
+  color: var(--states-normal, #8bbf1f);
+  text-align: center;
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 130%; /* 19.5px */
+  cursor: pointer;
+}
+/* ВТОРАЯ СТРОКА ШАПКИ */
+.header_2_row {
+  height: 80px;
+  border-bottom: 1px solid var(--system-neutral-100, #e4e4e7);
+  display: flex;
+}
+.header_2_row_block_catalog {
+  display: flex;
+  width: 384px;
+  height: 80px;
+  padding: 0px 24px 0px 50px;
+  /* justify-content: space-around; */
+  align-items: center;
+  flex-shrink: 0;
+}
+.header_2_row_block_catalog_logo {
+  display: flex;
+  width: 151px;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.header_2_row_block_catalog_text {
+  color: var(--text-primary-text, #222427);
+  /* CAPS/15 med */
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 130%; /* 19.5px */
+  text-transform: uppercase;
+}
+.header_2_row_block_catalog_count {
+  color: var(--text-secondary-text, #5e6062);
+  /* Caption/13 reg */
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 130%; /* 16.9px */
+}
+.header_2_row_menu {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  list-style-type: none;
+  border-left: 1px solid var(--system-neutral-100, #e4e4e7);
+}
+
+.menuLink {
+  white-space: nowrap;
+  color: var(--text-primary-text, #222427);
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 130%; /* 19.5px */
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header_2_row_basket_block {
+  display: flex;
+  min-width: 384px;
+  height: 80px;
+  padding: 0px 60px;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+  border-left: 1px solid var(--system-neutral-100, #e4e4e7);
+}
+.icon-with-number {
+  position: relative;
+  display: inline-block;
+}
+
+.icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.number {
+  position: absolute;
+  top: -10px;
+  right: -17px;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  background: var(--system-brand-200, #d2ee9a);
+  font-size: 8px;
+}
+/* Модальное окно */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  margin: 15% auto;
+  /* padding: 20px; */
+  width: 400px;
+  border: 1px solid #888;
+  width: 400px;
+  border-radius: 4px;
+  background: var(--system-white, #fff);
+}
+.modal_body {
+  display: flex;
+  width: 400px;
+  padding: 0 40px 40px 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.modal_input {
+  height: 46px;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--system-neutral-100, #e4e4e7);
+  background: var(--system-white, #fff);
+  width: 100%;
+}
+.modal_header {
+  color: var(--text-primary-text, #222427);
+  text-align: center;
+
+  /* Title/22 med */
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 120%; /* 26.4px */
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 20px;
+}
+.modal_body_priv {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+}
+.modal_body_priv_text {
+  color: var(--text-primary-text, #222427);
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 130%; /* 19.5px */
+}
+/* Стили для скрытого оригинального чекбокса */
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Скрыть оригинальный чекбокс */
+.custom-checkbox input {
+  display: none;
+}
+
+/* Стили для кастомного чекбокса */
+.custom-checkbox .checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #4caf50; /* Зеленый фон */
+  border-radius: 3px;
+  position: relative;
+}
+
+/* Стили для галочки */
+.custom-checkbox .checkmark:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+/* Показываем галочку при выборе */
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+.modal_button {
+  display: flex;
+  height: 46px;
+  padding: 12px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background: var(--accent-primary-green, #8bbf1f);
+}
+.modal_button:hover {
+  background: var(--accent-primary-green, #a3bd70);
+}
+.modal_button:disabled {
+  opacity: 0.6; /* Пример: уменьшение прозрачности */
+}
+
+@media screen and (min-width: 2200px) {
+  /* шапка 1 строка*/
+  .header_1_row_block_logo {
+    min-width: 384px;
+    max-width: 600px;
+    width: 100%;
+  }
+  .header_messengers_block {
+    min-width: 384px;
+    max-width: 600px;
+    width: 100%;
+  }
+  /* 2 шапка */
+  .header_2_row_block_catalog {
+    padding-left: 65px;
+    max-width: 600px;
+    width: 100%;
+  }
+  .header_2_row_basket_block {
+    min-width: 384px;
+    max-width: 600px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1255px) and (max-width: 1550px) {
+  /* шапка 1 строка*/
+  .header_messengers_block {
+    width: auto;
+    padding: 0 20px;
+  }
+  .header_messengers_block_text {
+    display: none;
+  }
+  .header_locate {
+    width: 100%;
+  }
+  .header_custom_input_search {
+    width: 100%;
+  }
+  .header_1_row_block_logo {
+    width: auto;
+  }
+  .header_1_row_block_logo_text {
+    display: none;
+  }
+  /* вторая шапка */
+  .header_2_row_block_catalog {
+    width: auto;
+  }
+  .header_2_row_block_catalog_count {
+    display: none;
+  }
+  .header_2_row_basket_block {
+    width: auto;
+    min-width: 229px;
+    padding: 0 20px;
+    gap: 20px;
+  }
+}
+/* тест корзины */
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+.mini-window {
+  background-color: #c3b7b7;
+  display: none;
+  position: absolute;
+  top: 160px;
+  background-color: white;
+  width: 384px;
+  right: 0;
+  z-index: 1;
+  border-radius: 0 0 0 4px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+.purchases {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.purchases_card {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  align-items: flex-start;
+  gap: 12px;
+  border-bottom: 1px solid var(--system-neutral-100, #e4e4e7);
+}
+.purchases_card_img_block {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  gap: 16px;
+}
+.purchases_card_img_block_text {
+  color: var(--text-primary-text, #222427);
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+}
+.purchases_card_img_block_text_down {
+  color: var(--text-secondary-text, #5e6062);
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 130%; /* 15.6px */
+}
+.purchases_suumary {
+  display: flex;
+  width: 80px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+.purchases_suumary_price {
+  color: var(--text-primary-text, #222427);
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 130%; /* 18.2px */
+}
+.purchases_suumary_count_block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+.purchases_sum {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+}
+.purchases_sum_text {
+  color: var(--text-primary-text, #222427);
+  /* Title/16 med */
+  font-family: "TT Norms Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%; /* 20.8px */
+}
+.button_purchases{
+    padding: 0 20px 20px 20px;
+}
+#modal_button_purchases{
+    width: 100%;
+}
+@media screen and (min-width: 700px) and (max-width: 1254px) {
+  /* шапка 1 строка*/
+  .header_messengers_block {
+    width: auto;
+    padding: 0 20px;
+  }
+  .header_messengers_block_text {
+    display: none;
+  }
+  .header_locate {
+    display: none;
+  }
+  .header_custom_input_search {
+    width: 100%;
+    min-width: 260px;
+  }
+  .header_1_row_block_logo {
+    width: auto;
+  }
+  .header_1_row_block_logo_text {
+    display: none;
+  }
+  .header_2_row_block_catalog {
+    width: auto;
+  }
+  .header_2_row_block_catalog_count {
+    display: none;
+  }
+  .header_2_row_basket_block {
+    width: auto;
+    min-width: 229px;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .header_2_row_menu {
+    min-width: 260px;
+    overflow: auto;
+    justify-content: flex-start;
+  }
+}
+@media screen and (max-width: 699px) {
+  /* шапка 1 строка*/
+  .header_1_row {
+    height: 61px;
+    justify-content: space-around;
+  }
+  .header_messengers_block {
+    width: auto;
+    padding: 0px;
+    border: none;
+    height: 61px;
+  }
+  .header_messengers_block_text {
+    display: none;
+  }
+  .header_locate {
+    display: none;
+  }
+  .header_custom_input_search {
+    display: none;
+  }
+  .header_1_row_block_logo {
+    width: auto;
+    height: 61px;
+    padding: 0;
+  }
+  .header_1_row_block_logo_text {
+    display: none;
+  }
+  .header_1_row_block_logo_logo {
+    width: 90px;
+  }
+  .header_1_row_block_logo_logo svg {
+    /* Ваши стили для SVG */
+    width: 90px;
+    height: 36px;
+  }
+  .header_locate_mobile {
+    display: flex;
+  }
+  /* вторая шапка */
+  .header_2_row_block_catalog {
+    display: none;
+  }
+  .header_2_row {
+    flex-direction: column;
+    height: calc(100vh - 245px);
+  }
+  .header_2_row_menu {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+    gap: 36px;
+    flex-shrink: 0;
+  }
+  .header_2_row_menu .menuItem:first-child {
+    display: none;
+  }
+  .header_2_row_menu .menuItem:last-child {
+    display: flex;
+    border-radius: 4px;
+    border: 1px solid rgba(139, 191, 31, 0.4);
+    background: var(--system-white, #fff);
+    height: 40px;
+    padding: 12px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .header_2_row_basket_block {
+    padding: 0;
+    min-width: auto;
+    border-top: 1px solid var(--system-neutral-100, #e4e4e7);
+    height: 60px;
+    gap: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .number {
+    display: none;
+  }
+  .icon-with-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    align-self: stretch;
+    padding: 20px;
+    border-right: 1px solid var(--system-neutral-100, #e4e4e7);
+  }
+  .header_2_row_basket_block .icon-with-number:nth-child(3) {
+    display: none;
+  }
+  .bottom_menu {
+    display: flex;
+    height: 64px;
+    padding: 10px 0px;
+    justify-content: space-around;
+    align-items: center;
+    flex-shrink: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 16px 16px 0px 0px;
+    background: var(--system-white, #fff);
+    box-shadow: 0px -4px 30px 0px rgba(0, 0, 0, 0.1);
+  }
+  .bottom_menu_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .bottom_menu_item_text {
+    color: var(--text-secondary-text, #5e6062);
+    text-align: center;
+    font-family: "TT Norms Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 130%;
+  }
+  #greenMenu {
+    color: var(--states-normal, #8bbf1f);
+  }
+  .header {
+    height: 100%;
+  }
+  .modal-content {
+    width: 300px;
+  }
+  .modal_body {
+    width: 300px;
+  }
+}
